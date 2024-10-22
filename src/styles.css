@@ -1,0 +1,24 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  --tw-bg-opacity: 1;
+  /* background-color: rgb(3 7 18 / var(--tw-bg-opacity)); */
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #7877c64d, #fff0);
+  /* background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #d9d8ff30, #ffffffe6); */
+
+  min-height: 100vh;
+  /* --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity)); */
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+  width: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

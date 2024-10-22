@@ -1,0 +1,64 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="nombres">Nombres</label>
+      <div class="input-container">
+        <input id="nombres" formControlName="nombres" placeholder="Nombre del producto" />
+      </div>
+      <div *ngIf="userForm.get('nombres')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="fechaNacimiento">Descripcion</label>
+      <div class="input-container">
+        <textarea name="" id="" formControlName="descripcion"></textarea>
+      </div>
+      <div *ngIf="userForm.get('fechaNacimiento')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="genero">Género</label>
+        <select id="genero" formControlName="genero">
+          <option value="">Seleccione</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      <div *ngIf="userForm.get('genero')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="pais">País</label>
+      <select id="pais" formControlName="pais">
+        <option value="">Seleccione</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Panamá">Panamá</option>
+        <!-- Agrega más opciones según sea necesario -->
+      </select>
+      <div *ngIf="userForm.get('pais')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<div class="modal" [class.show]="showModal">
+  <div class="modal-content">
+    <h2>Formulario Enviado</h2>
+    <p>¡Formulario enviado exitosamente!</p>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>

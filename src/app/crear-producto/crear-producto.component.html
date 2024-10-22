@@ -1,0 +1,66 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+  <div class="center">
+    <h1>Crear Usuario</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur</p>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="nombres">Nombres</label>
+      <div class="input-container">
+        <input id="nombres" formControlName="nombres" placeholder="Write your name" />
+      </div>
+      <div *ngIf="productForm.get('nombres')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="descripcion">Descripcion</label>
+      <div >
+        <textarea name="" id="" formControlName="descripcion"></textarea>
+      </div>
+      <div *ngIf="productForm.get('descripcion')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="precio">Precio</label>
+      <div class="input-container">
+        <input type="number" formControlName="precio" >
+      </div>
+      <div *ngIf="productForm.get('precio')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <div >
+        <input type="file" name="" id="" formControlName="file">
+      </div>
+      <div *ngIf="productForm.get('file')?.invalid && submitted">
+        <small>Este campo es obligatorio.</small>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-muted">Complete el formulario de manera correcta para habilitar el botón.</p>
+
+  <button type="submit">Enviar</button>
+  
+  
+</form>
+
+<div class="modal" [class.show]="showModal">
+  <div class="modal-content">
+    <h2>Formulario Enviado</h2>
+    <p>¡Formulario enviado exitosamente!</p>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>
