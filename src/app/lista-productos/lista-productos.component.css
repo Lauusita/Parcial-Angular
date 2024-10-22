@@ -1,33 +1,35 @@
-/* Grid layout */
+/* Flex container */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Fija 3 columnas */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples líneas */
+  justify-content: space-between; /* Espacio entre tarjetas */
   gap: 16px;
-  margin: 16px;
-  width: 90%;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 /* Estilos de las cards */
 .card {
+  width: 300px; /* Ancho fijo para las cards */
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background-color: #fff;
   transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin-bottom: 16px; /* Espacio entre las tarjetas en la dirección vertical */
 }
 
 .card:hover {
   transform: scale(1.02);
 }
 
+/* Aseguramos que la imagen siempre se vea correctamente */
 .product-image {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: cover; /* Mantiene la proporción de la imagen dentro del contenedor */
 }
 
 .card-content {
